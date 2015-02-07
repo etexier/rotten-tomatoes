@@ -55,15 +55,25 @@ PODS:
 
 DEPENDENCIES:
   - Kiwi
-  - Rest2Mobile (~> 1.1)
+  - Rest2Mobile (from `https://github.com/magnetsystems/r2m-sdk-ios.git`, branch `fix_no_wifi_crash`)
   - SVProgressHUD
+
+EXTERNAL SOURCES:
+  Rest2Mobile:
+    :branch: fix_no_wifi_crash
+    :git: https://github.com/magnetsystems/r2m-sdk-ios.git
+
+CHECKOUT OPTIONS:
+  Rest2Mobile:
+    :commit: db66c66a2de887a4c63c555f442a318147822dc0
+    :git: https://github.com/magnetsystems/r2m-sdk-ios.git
 
 SPEC CHECKSUMS:
   AFNetworking: 0f54cb5d16ce38c1b76948faffb8d5fb705021c7
   CocoaLumberjack: 205769c032b5fef85b92472046bcc8b7e7c8a817
   Kiwi: 73e1400209055ee9c8ba78c6012b6b642d0fb9f7
   Mantle: d5fbaf30fbc58031223af13812c060e15934a1fe
-  Rest2Mobile: 53d92bfc8a64cf2bd46c3b8ce3c3ab494b85b14e
+  Rest2Mobile: ef50ecf97e49bab0cb763878f32c0acd5425d95e
   SVProgressHUD: da7a49e789af645d9279ffbca62318945a832438
 
 COCOAPODS: 0.35.0
