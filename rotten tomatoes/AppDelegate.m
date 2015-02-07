@@ -10,7 +10,6 @@
 #import "MovieViewController.h"
 
 @interface AppDelegate ()
-
 @end
 
 @implementation AppDelegate
@@ -23,9 +22,10 @@
 
     MovieViewController *vc = [[MovieViewController alloc] init];
     UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:vc];
-    nvc.view.backgroundColor = [UIColor blackColor];
-    vc.view.backgroundColor  = [UIColor blackColor];
-    self.window.backgroundColor = [UIColor blackColor];
+//    nvc.view.backgroundColor = [UIColor blackColor];
+//    vc.view.backgroundColor  = [UIColor blackColor];
+//    self.window.backgroundColor = [UIColor blackColor];
+
     self.window.rootViewController = nvc;
     [self.window makeKeyAndVisible];
     
