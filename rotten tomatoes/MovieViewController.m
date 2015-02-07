@@ -93,11 +93,6 @@
     return self.movies.count;
 }
 
-//-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//    NSLog(@"# of sections: %lu", self.movies.count);
-//    return self.movies.count;
-//}
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MovieCellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MovieCell" forIndexPath:indexPath];
     
@@ -136,7 +131,7 @@
         
     }
     @catch (NSException * e) {
-        //NSLog(@"An Exception occurred: %@", e);
+        NSLog(@"An Exception occurred: %@", e);
         [[[UIAlertView alloc] initWithTitle:@"Error"
                                     message:@"An error occurred"
                                    delegate:nil
