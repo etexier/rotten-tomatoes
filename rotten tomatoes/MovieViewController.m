@@ -21,7 +21,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *movies;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
-@property (nonatomic, strong) SVProgressHUD *hud;
 @property (nonatomic, strong) RTMoviesController *restController;
 
 @end
@@ -53,11 +52,9 @@
     // register movie cell
     [self.tableView registerNib:[UINib nibWithNibName:@"MovieCellTableViewCell" bundle:nil] forCellReuseIdentifier:@"MovieCell"];
     self.tableView.rowHeight = 100;
-    
+    NSLog(@"Loading....");
     [self loadData];
-    
     self.title = @"Movies";
-
 }
 
 - (void)didReceiveMemoryWarning {
@@ -71,6 +68,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.movies.count;
 }
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MovieCellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MovieCell" forIndexPath:indexPath];
@@ -94,45 +92,21 @@
 
 -(void) loadData {
     
-    @try {
-        NSLog(@"Invoking controller");
-        [self.restController getBoxOffice:@"10" country:@"us" apikey:kApiKey success:^(RTBoxOfficeResult *response) {
-           NSLog(@"Response = %@", response);
-            self.movies = response.movies;
-            [self.tableView reloadData];
-        } failure:^(NSError *error) {
-            [self showConnectionError];
-        }];
-    }
-    @catch (NSException * e) {
-        [self showConnectionError];
-    }
-    @finally {
-        NSLog(@"finally");
-    }
-    
-    
-}
-
--(void)showConnectionError {
-    [[[UIAlertView alloc] initWithTitle:@"Error"
-                                message:@"Couldn't get Movies. Check your connection"
-                               delegate:nil
-                      cancelButtonTitle:@"OK"
-                      otherButtonTitles:nil, nil] show];
-
-}
-- (void)onRefresh {
+    [SVProgressHUD showWithStatus:@"Loading..." maskType:SVProgressHUDMaskTypeBlack];
     [self.restController getBoxOffice:@"10" country:@"us" apikey:kApiKey success:^(RTBoxOfficeResult *response) {
-        NSLog(@"Response = %@", response);
+       NSLog(@"Response = %@", response);
         self.movies = response.movies;
-        [self.refreshControl endRefreshing];
+        [SVProgressHUD dismiss];
         [self.tableView reloadData];
+        
     } failure:^(NSError *error) {
-        [self showConnectionError];
-        [self.refreshControl endRefreshing];
+        [SVProgressHUD showErrorWithStatus:@"Couldn't get Movies. Check your connection"];
     }];
+}
 
+- (void)onRefresh {
+    [self loadData];
+    [self.refreshControl endRefreshing];
 }
 
 
