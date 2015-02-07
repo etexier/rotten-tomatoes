@@ -1,0 +1,1 @@
+../../../Rest2Mobile/Rest2Mobile/Serialization/Serializer/MMStringResponseSerializer.h

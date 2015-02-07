@@ -23,12 +23,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.synopsisLabel.text = self.movie[@"synopsis"];
-    NSString *url = [self.movie valueForKeyPath:@"posters.detailed"];
+    self.synopsisLabel.text = self.movie.synopsis;
+    NSString *url = self.movie.posters.thumbnail;
     url = [url stringByReplacingOccurrencesOfString:@"_tmb.jpg" withString:@"_det.jpg"];
     
     [self.moviePoster setImageWithURL:[NSURL URLWithString:url]];
-    self.title = self.movie[@"title"];
+    self.title = self.movie.title;
     
     
 }

@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RTHeader.h"
 
 @interface MovieDetailsViewController : UIViewController
-@property (nonatomic, strong) NSDictionary *movie;
+@property (nonatomic, strong) RTMovie *movie;
 
 @end
