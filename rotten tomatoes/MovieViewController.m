@@ -76,7 +76,12 @@
     RTMovie *movie = (RTMovie *) self.movies[indexPath.row];
     cell.titleLabel.text = movie.title;
     cell.synopsisLabel.text = movie.synopsis;
+    cell.thumbnail.alpha = 0;
     [cell.thumbnail setImageWithURL:[NSURL URLWithString:movie.posters.thumbnail]];
+    [UIView beginAnimations:@"fade in" context:nil];
+    [UIView setAnimationDuration:1.0];
+    cell.thumbnail.alpha = 1;
+    [UIView commitAnimations];
 
     return cell;
 }
