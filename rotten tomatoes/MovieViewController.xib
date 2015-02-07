@@ -19,7 +19,6 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <color key="separatorColor" red="1" green="0.28395721410000002" blue="0.018118384899999999" alpha="1" colorSpace="calibratedRGB"/>
                 </tableView>
             </subviews>
             <point key="canvasLocation" x="323" y="183"/>
