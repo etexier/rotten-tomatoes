@@ -86,19 +86,20 @@ static NSString *getMoviesString = kRottenTomatoesUrl;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MovieCellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MovieCell" forIndexPath:indexPath];
     
+    
     NSDictionary *movie = self.movies[indexPath.row];
     NSString *url = [movie valueForKeyPath:@"posters.thumbnail"];
     NSString *title = [movie valueForKey:@"title"];
     NSString *synopsis = [movie valueForKey:@"synopsis"];
     
+    
+    NSLog(@"synopsis: %@", synopsis);
+    NSLog(@"title: %@", title);
+    NSLog(@"URL: %@", url);
     cell.titleLabel.text = title;
     cell.synopsisLabel.text = synopsis;
     [cell.thumbnail setImageWithURL:[NSURL URLWithString:url]];
 
-    NSLog(@"synopsis: %@", synopsis);
-    NSLog(@"title: %@", title);
-    NSLog(@"URL: %@", url);
-    
     return cell;
 }
 
