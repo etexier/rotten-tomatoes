@@ -8,10 +8,12 @@
 
 #import "MovieDetailsViewController.h"
 #import "UIImageView+AFNetworking.h"
+#import "Helper.h"
 
 @interface MovieDetailsViewController ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *moviePoster;
+@property (weak, nonatomic) IBOutlet UIImageView *moviePosterDetailed;
 
 @property (weak, nonatomic) IBOutlet UIScrollView *movieDetails;
 
@@ -25,12 +27,14 @@
     [super viewDidLoad];
     self.synopsisLabel.text = self.movie.synopsis;
     NSString *url = self.movie.posters.thumbnail;
+
+    self.moviePoster.alpha = 1;
+    [self.moviePoster setImageWithURL:[NSURL URLWithString:url]];
+    
     url = [url stringByReplacingOccurrencesOfString:@"_tmb.jpg" withString:@"_det.jpg"];
     
-    [self.moviePoster setImageWithURL:[NSURL URLWithString:url]];
+    [Helper fadeInImage:self.moviePosterDetailed url:[NSURL URLWithString:url]];
     self.title = self.movie.title;
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {

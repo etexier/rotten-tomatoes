@@ -13,7 +13,7 @@
 #import <SVProgressHUD/SVProgressHUD.h>
 #import "Constants.h"
 #import "RTHeader.h"
-
+#import "Helper.h"
 
 
 // implement UITableViewDataSource: self will provide the data and be its own delegate
@@ -76,12 +76,7 @@
     RTMovie *movie = (RTMovie *) self.movies[indexPath.row];
     cell.titleLabel.text = movie.title;
     cell.synopsisLabel.text = movie.synopsis;
-    cell.thumbnail.alpha = 0;
-    [cell.thumbnail setImageWithURL:[NSURL URLWithString:movie.posters.thumbnail]];
-    [UIView beginAnimations:@"fade in" context:nil];
-    [UIView setAnimationDuration:1.0];
-    cell.thumbnail.alpha = 1;
-    [UIView commitAnimations];
+    [Helper fadeInImage:cell.thumbnail url:[NSURL URLWithString:movie.posters.thumbnail]];
 
     return cell;
 }
