@@ -1,0 +1,740 @@
++Name getTopRentals
++Request
+GET http://api.rottentomatoes.com/api/public/v1.0/lists/dvds/top_rentals.json?limit=10&country=us&apikey=wrtc95qtd7c84rvmdv23tggg
+
+
+
+
++Response
+
++Body
+
+{
+"movies" : [
+{
+"id" : "771308675",
+"posters" : {
+"original" : "http:\/\/content8.flixster.com\/movie\/11\/18\/91\/11189194_tmb.jpg",
+"detailed" : "http:\/\/content8.flixster.com\/movie\/11\/18\/91\/11189194_tmb.jpg",
+"thumbnail" : "http:\/\/content8.flixster.com\/movie\/11\/18\/91\/11189194_tmb.jpg",
+"profile" : "http:\/\/content8.flixster.com\/movie\/11\/18\/91\/11189194_tmb.jpg"
+},
+"synopsis" : "A growing nation of genetically evolved apes led by Caesar is threatened by a band of human survivors of the devastating virus unleashed a decade earlier. They reach a fragile peace, but it proves short-lived, as both sides are brought to the brink of a war that will determine who will emerge as Earth's dominant species. (c) Fox",
+"abridged_cast" : [
+{
+"name" : "Andy Serkis",
+"id" : "269710329",
+"characters" : [
+"Caesar"
+]
+},
+{
+"name" : "Jason Clarke",
+"id" : "359854726",
+"characters" : [
+"Malcolm"
+]
+},
+{
+"name" : "Gary Oldman",
+"id" : "162652649",
+"characters" : [
+"Dreyfus"
+]
+},
+{
+"name" : "Keri Russell",
+"id" : "162685092",
+"characters" : [
+"Ellie"
+]
+},
+{
+"name" : "Kodi Smit-McPhee",
+"id" : "770673434",
+"characters" : [
+"Alexander"
+]
+}
+],
+"critics_consensus" : "",
+"ratings" : {
+"audience_rating" : "Upright",
+"critics_rating" : "Certified Fresh",
+"audience_score" : 89,
+"critics_score" : 90
+},
+"mpaa_rating" : "PG-13",
+"title" : "Dawn Of The Planet Of The Apes",
+"runtime" : 130,
+"alternate_ids" : {
+"imdb" : "2103281"
+},
+"year" : 2014,
+"links" : {
+"alternate" : "http:\/\/www.rottentomatoes.com\/m\/dawn_of_the_planet_of_the_apes\/",
+"reviews" : "http:\/\/api.rottentomatoes.com\/api\/public\/v1.0\/movies\/771308675\/reviews.json",
+"self" : "http:\/\/api.rottentomatoes.com\/api\/public\/v1.0\/movies\/771308675.json",
+"cast" : "http:\/\/api.rottentomatoes.com\/api\/public\/v1.0\/movies\/771308675\/cast.json",
+"similar" : "http:\/\/api.rottentomatoes.com\/api\/public\/v1.0\/movies\/771308675\/similar.json"
+},
+"release_dates" : {
+"theater" : "2014-07-11",
+"dvd" : "2014-12-02"
+}
+},
+{
+"id" : "771311818",
+"posters" : {
+"original" : "http:\/\/content8.flixster.com\/movie\/11\/17\/80\/11178082_tmb.jpg",
+"detailed" : "http:\/\/content8.flixster.com\/movie\/11\/17\/80\/11178082_tmb.jpg",
+"thumbnail" : "http:\/\/content8.flixster.com\/movie\/11\/17\/80\/11178082_tmb.jpg",
+"profile" : "http:\/\/content8.flixster.com\/movie\/11\/17\/80\/11178082_tmb.jpg"
+},
+"synopsis" : "From Marvel, the studio that brought you the global blockbuster franchises of Iron Man, Thor, Captain America and The Avengers, comes a new team-the Guardians of the Galaxy. An action-packed, epic space adventure, Marvel's \"Guardians of the Galaxy\" expands the Marvel Cinematic Universe into the cosmos, where brash adventurer Peter Quill finds himself the object of an unrelenting bounty hunt after stealing a mysterious orb coveted by Ronan, a powerful villain with ambitions that threaten the entire universe. To evade the ever-persistent Ronan, Quill is forced into an uneasy truce with a quartet of disparate misfits-Rocket, a gun-toting raccoon, Groot, a tree-like humanoid, the deadly and enigmatic Gamora and the revenge-driven Drax the Destroyer. But when Quill discovers the true power of the orb and the menace it poses to the cosmos, he must do his best to rally his ragtag rivals for a last, desperate stand-with the galaxy's fate in the balance. (C) Walt Disney",
+"abridged_cast" : [
+{
+"name" : "Chris Pratt",
+"id" : "770692298",
+"characters" : [
+"Peter Quill\/Star-Lord"
+]
+},
+{
+"name" : "Zoe Saldana",
+"id" : "162660050",
+"characters" : [
+"Gamora"
+]
+},
+{
+"name" : "Dave Bautista",
+"id" : "771584423",
+"characters" : [
+"Drax"
+]
+},
+{
+"name" : "Lee Pace",
+"id" : "493815806",
+"characters" : [
+"Ronan the Accuser"
+]
+},
+{
+"name" : "Bradley Cooper",
+"id" : "351525448",
+"characters" : [
+"Rocket Raccoon"
+]
+}
+],
+"critics_consensus" : "",
+"ratings" : {
+"audience_rating" : "Upright",
+"critics_rating" : "Certified Fresh",
+"audience_score" : 93,
+"critics_score" : 91
+},
+"mpaa_rating" : "PG-13",
+"title" : "Guardians of the Galaxy",
+"runtime" : 121,
+"alternate_ids" : {
+"imdb" : "2015381"
+},
+"year" : 2014,
+"links" : {
+"alternate" : "http:\/\/www.rottentomatoes.com\/m\/guardians_of_the_galaxy\/",
+"reviews" : "http:\/\/api.rottentomatoes.com\/api\/public\/v1.0\/movies\/771311818\/reviews.json",
+"self" : "http:\/\/api.rottentomatoes.com\/api\/public\/v1.0\/movies\/771311818.json",
+"cast" : "http:\/\/api.rottentomatoes.com\/api\/public\/v1.0\/movies\/771311818\/cast.json",
+"similar" : "http:\/\/api.rottentomatoes.com\/api\/public\/v1.0\/movies\/771311818\/similar.json"
+},
+"release_dates" : {
+"theater" : "2014-08-01",
+"dvd" : "2014-12-09"
+}
+},
+{
+"id" : "771360863",
+"posters" : {
+"original" : "http:\/\/content7.flixster.com\/movie\/11\/18\/91\/11189197_tmb.jpg",
+"detailed" : "http:\/\/content7.flixster.com\/movie\/11\/18\/91\/11189197_tmb.jpg",
+"thumbnail" : "http:\/\/content7.flixster.com\/movie\/11\/18\/91\/11189197_tmb.jpg",
+"profile" : "http:\/\/content7.flixster.com\/movie\/11\/18\/91\/11189197_tmb.jpg"
+},
+"synopsis" : "From La Femme Nikita and The Professional to The Fifth Element, writer\/director Luc Besson has created some of the toughest, most memorable female action heroes in cinematic history. Now, Besson directs Scarlett Johansson in Lucy, an action-thriller that tracks a woman accidentally caught in a dark deal who turns the tables on her captors and transforms into a merciless warrior evolved beyond human logic. (C) Universal",
+"abridged_cast" : [
+{
+"name" : "Scarlett Johansson",
+"id" : "162652872",
+"characters" : [
+"Lucy"
+]
+},
+{
+"name" : "Morgan Freeman",
+"id" : "162652224",
+"characters" : [
+"Professor Norman"
+]
+},
+{
+"name" : "Min-sik Choi",
+"id" : "162695879",
+"characters" : [
+"Mr. Jang"
+]
+},
+{
+"name" : "Amr Waked",
+"id" : "326393104",
+"characters" : [
+"Pierre Del Rio"
+]
+},
+{
+"name" : "Julian Rhind-Tutt",
+"id" : "288356077",
+"characters" : [
+"The Limey"
+]
+}
+],
+"critics_consensus" : "",
+"ratings" : {
+"audience_rating" : "Spilled",
+"critics_rating" : "Fresh",
+"audience_score" : 47,
+"critics_score" : 66
+},
+"mpaa_rating" : "R",
+"title" : "Lucy",
+"runtime" : 89,
+"alternate_ids" : {
+"imdb" : "2872732"
+},
+"year" : 2014,
+"links" : {
+"alternate" : "http:\/\/www.rottentomatoes.com\/m\/lucy_2014\/",
+"reviews" : "http:\/\/api.rottentomatoes.com\/api\/public\/v1.0\/movies\/771360863\/reviews.json",
+"self" : "http:\/\/api.rottentomatoes.com\/api\/public\/v1.0\/movies\/771360863.json",
+"cast" : "http:\/\/api.rottentomatoes.com\/api\/public\/v1.0\/movies\/771360863\/cast.json",
+"similar" : "http:\/\/api.rottentomatoes.com\/api\/public\/v1.0\/movies\/771360863\/similar.json"
+},
+"release_dates" : {
+"theater" : "2014-07-25",
+"dvd" : "2015-01-20"
+}
+},
+{
+"id" : "771191433",
+"posters" : {
+"original" : "http:\/\/content6.flixster.com\/movie\/11\/18\/18\/11181808_tmb.jpg",
+"detailed" : "http:\/\/content6.flixster.com\/movie\/11\/18\/18\/11181808_tmb.jpg",
+"thumbnail" : "http:\/\/content6.flixster.com\/movie\/11\/18\/18\/11181808_tmb.jpg",
+"profile" : "http:\/\/content6.flixster.com\/movie\/11\/18\/18\/11181808_tmb.jpg"
+},
+"synopsis" : "The city needs heroes. Darkness has settled over New York City as Shredder and his evil Foot Clan have an iron grip on everything from the police to the politicians. The future is grim until four unlikely outcast brothers rise from the sewers and discover their destiny as Teenage Mutant Ninja Turtles. The Turtles must work with fearless reporter April O'Neil (Megan Fox) and her wise-cracking cameraman Vern Fenwick (Will Arnett) to save the city and unravel Shredder's diabolical plan. Based on the Teenage Mutant Ninja Turtles Characters Created by PETER LAIRD and KEVIN EASTMAN with a Screenplay by JOSH APPELBAUM & ANDRE NEMEC and EVAN DAUGHERTY, Teenage Mutant Ninja Turtles is produced by MICHAEL BAY (director and executive producer of the blockbuster Transformers franchise), Andrew Form, Brad Fuller, Galen Walker, Scott Mednick and Ian Bryce, and directed by JONATHAN LIEBESMAN (Wrath of the Titans).(c) Paramount",
+"abridged_cast" : [
+{
+"name" : "Megan Fox",
+"id" : "162665778",
+"characters" : [
+"April O'Neil"
+]
+},
+{
+"name" : "Pete Ploszek",
+"id" : "771441319",
+"characters" : [
+"Leonardo"
+]
+},
+{
+"name" : "Johnny Knoxville",
+"id" : "162652591",
+"characters" : [
+"Leonardo (voice only)"
+]
+},
+{
+"name" : "Jeremy Howard",
+"id" : "381420643",
+"characters" : [
+"Donatello"
+]
+},
+{
+"name" : "Noel Fisher",
+"id" : "417268199",
+"characters" : [
+"Michaelangelo"
+]
+}
+],
+"critics_consensus" : "",
+"ratings" : {
+"audience_rating" : "Spilled",
+"critics_rating" : "Rotten",
+"audience_score" : 54,
+"critics_score" : 21
+},
+"mpaa_rating" : "PG-13",
+"title" : "Teenage Mutant Ninja Turtles",
+"runtime" : 101,
+"alternate_ids" : {
+"imdb" : "1291150"
+},
+"year" : 2014,
+"links" : {
+"alternate" : "http:\/\/www.rottentomatoes.com\/m\/teenage_mutant_ninja_turtles_2013\/",
+"reviews" : "http:\/\/api.rottentomatoes.com\/api\/public\/v1.0\/movies\/771191433\/reviews.json",
+"self" : "http:\/\/api.rottentomatoes.com\/api\/public\/v1.0\/movies\/771191433.json",
+"cast" : "http:\/\/api.rottentomatoes.com\/api\/public\/v1.0\/movies\/771191433\/cast.json",
+"similar" : "http:\/\/api.rottentomatoes.com\/api\/public\/v1.0\/movies\/771191433\/similar.json"
+},
+"release_dates" : {
+"theater" : "2014-08-08",
+"dvd" : "2014-12-16"
+}
+},
+{
+"id" : "771354484",
+"posters" : {
+"original" : "http:\/\/content8.flixster.com\/movie\/11\/18\/95\/11189526_tmb.jpg",
+"detailed" : "http:\/\/content8.flixster.com\/movie\/11\/18\/95\/11189526_tmb.jpg",
+"thumbnail" : "http:\/\/content8.flixster.com\/movie\/11\/18\/95\/11189526_tmb.jpg",
+"profile" : "http:\/\/content8.flixster.com\/movie\/11\/18\/95\/11189526_tmb.jpg"
+},
+"synopsis" : "April, 1945. As the Allies make their final push in the European Theatre, a battle-hardened army sergeant named Wardaddy (Brad Pitt) commands a Sherman tank and her five-man crew on a deadly mission behind enemy lines. Outnumbered and outgunned, and with a rookie soldier thrust into their platoon, Wardaddy and his men face overwhelming odds in their heroic attempts to strike at the heart of Nazi Germany. (C) Sony",
+"abridged_cast" : [
+{
+"name" : "Brad Pitt",
+"id" : "162652627",
+"characters" : [
+"Wardaddy"
+]
+},
+{
+"name" : "Shia LaBeouf",
+"id" : "162654215",
+"characters" : [
+"Boyd \"Bible\" Swan"
+]
+},
+{
+"name" : "Logan Lerman",
+"id" : "341816559",
+"characters" : [
+"Norman Ellison"
+]
+},
+{
+"name" : "Michael Pena",
+"id" : "309887156",
+"characters" : [
+"Trini \"Gordo\" Garcia"
+]
+},
+{
+"name" : "Jon Bernthal",
+"id" : "770682766",
+"characters" : [
+"Grady \"Coon-Ass\" Travis"
+]
+}
+],
+"critics_consensus" : "",
+"ratings" : {
+"audience_rating" : "Upright",
+"critics_rating" : "Certified Fresh",
+"audience_score" : 86,
+"critics_score" : 77
+},
+"mpaa_rating" : "R",
+"title" : "Fury",
+"runtime" : 135,
+"alternate_ids" : {
+"imdb" : "2713180"
+},
+"year" : 2014,
+"links" : {
+"alternate" : "http:\/\/www.rottentomatoes.com\/m\/fury_2015\/",
+"reviews" : "http:\/\/api.rottentomatoes.com\/api\/public\/v1.0\/movies\/771354484\/reviews.json",
+"self" : "http:\/\/api.rottentomatoes.com\/api\/public\/v1.0\/movies\/771354484.json",
+"cast" : "http:\/\/api.rottentomatoes.com\/api\/public\/v1.0\/movies\/771354484\/cast.json",
+"similar" : "http:\/\/api.rottentomatoes.com\/api\/public\/v1.0\/movies\/771354484\/similar.json"
+},
+"release_dates" : {
+"theater" : "2014-10-17",
+"dvd" : "2015-01-27"
+}
+},
+{
+"id" : "771360861",
+"posters" : {
+"original" : "http:\/\/content9.flixster.com\/movie\/11\/18\/92\/11189259_tmb.jpg",
+"detailed" : "http:\/\/content9.flixster.com\/movie\/11\/18\/92\/11189259_tmb.jpg",
+"thumbnail" : "http:\/\/content9.flixster.com\/movie\/11\/18\/92\/11189259_tmb.jpg",
+"profile" : "http:\/\/content9.flixster.com\/movie\/11\/18\/92\/11189259_tmb.jpg"
+},
+"synopsis" : "GONE GIRL - directed by David Fincher and based upon the global bestseller by Gillian Flynn - unearths the secrets at the heart of a modern marriage. On the occasion of his fifth wedding anniversary, Nick Dunne (Ben Affleck) reports that his beautiful wife, Amy (Rosamund Pike), has gone missing. Under pressure from the police and a growing media frenzy, Nick's portrait of a blissful union begins to crumble. Soon his lies, deceits and strange behavior have everyone asking the same dark question: Did Nick Dunne kill his wife? (c) Fox",
+"abridged_cast" : [
+{
+"name" : "Ben Affleck",
+"id" : "162665891",
+"characters" : [
+"Nick Dunne"
+]
+},
+{
+"name" : "Rosamund Pike",
+"id" : "162654705",
+"characters" : [
+"Amy Dunne"
+]
+},
+{
+"name" : "Tyler Perry",
+"id" : "162660714",
+"characters" : [
+"Tanner Bolt"
+]
+},
+{
+"name" : "Neil Patrick Harris",
+"id" : "351527581",
+"characters" : [
+"Desi Collings"
+]
+},
+{
+"name" : "David Clennon",
+"id" : "381422006",
+"characters" : [
+"Rand Elliott"
+]
+}
+],
+"critics_consensus" : "",
+"ratings" : {
+"audience_rating" : "Upright",
+"critics_rating" : "Certified Fresh",
+"audience_score" : 88,
+"critics_score" : 88
+},
+"mpaa_rating" : "R",
+"title" : "Gone Girl",
+"runtime" : 145,
+"alternate_ids" : {
+"imdb" : "2267998"
+},
+"year" : 2014,
+"links" : {
+"alternate" : "http:\/\/www.rottentomatoes.com\/m\/gone_girl\/",
+"reviews" : "http:\/\/api.rottentomatoes.com\/api\/public\/v1.0\/movies\/771360861\/reviews.json",
+"self" : "http:\/\/api.rottentomatoes.com\/api\/public\/v1.0\/movies\/771360861.json",
+"cast" : "http:\/\/api.rottentomatoes.com\/api\/public\/v1.0\/movies\/771360861\/cast.json",
+"similar" : "http:\/\/api.rottentomatoes.com\/api\/public\/v1.0\/movies\/771360861\/similar.json"
+},
+"release_dates" : {
+"theater" : "2014-10-03",
+"dvd" : "2015-01-13"
+}
+},
+{
+"id" : "771313085",
+"posters" : {
+"original" : "http:\/\/content8.flixster.com\/movie\/11\/18\/04\/11180458_tmb.jpg",
+"detailed" : "http:\/\/content8.flixster.com\/movie\/11\/18\/04\/11180458_tmb.jpg",
+"thumbnail" : "http:\/\/content8.flixster.com\/movie\/11\/18\/04\/11180458_tmb.jpg",
+"profile" : "http:\/\/content8.flixster.com\/movie\/11\/18\/04\/11180458_tmb.jpg"
+},
+"synopsis" : "In The Equalizer, Denzel Washington plays McCall, a man who believes he has put his mysterious past behind him and dedicated himself to beginning a new, quiet life. But when McCall meets Teri (Chloe Grace Moretz), a young girl under the control of ultra-violent Russian gangsters, he can't stand idly by - he has to help her. Armed with hidden skills that allow him to serve vengeance against anyone who would brutalize the helpless, McCall comes out of his self-imposed retirement and finds his desire for justice reawakened. If someone has a problem, if the odds are stacked against them, if they have nowhere else to turn, McCall will help. He is The Equalizer. (c) Sony",
+"abridged_cast" : [
+{
+"name" : "Denzel Washington",
+"id" : "162661439",
+"characters" : [
+"Robert McCall"
+]
+},
+{
+"name" : "Marton Csokas",
+"id" : "162653240",
+"characters" : [
+"Teddy"
+]
+},
+{
+"name" : "Chloe Grace Moretz",
+"id" : "771410621",
+"characters" : [
+"Teri"
+]
+},
+{
+"name" : "David Harbour",
+"id" : "770772702",
+"characters" : [
+"Masters"
+]
+},
+{
+"name" : "Bill Pullman",
+"id" : "162654131",
+"characters" : [
+"Brian Plummer"
+]
+}
+],
+"critics_consensus" : "",
+"ratings" : {
+"audience_rating" : "Upright",
+"critics_rating" : "Fresh",
+"audience_score" : 78,
+"critics_score" : 61
+},
+"mpaa_rating" : "R",
+"title" : "The Equalizer",
+"runtime" : 131,
+"alternate_ids" : {
+"imdb" : "0455944"
+},
+"year" : 2014,
+"links" : {
+"alternate" : "http:\/\/www.rottentomatoes.com\/m\/the_equalizer_2013\/",
+"reviews" : "http:\/\/api.rottentomatoes.com\/api\/public\/v1.0\/movies\/771313085\/reviews.json",
+"self" : "http:\/\/api.rottentomatoes.com\/api\/public\/v1.0\/movies\/771313085.json",
+"cast" : "http:\/\/api.rottentomatoes.com\/api\/public\/v1.0\/movies\/771313085\/cast.json",
+"similar" : "http:\/\/api.rottentomatoes.com\/api\/public\/v1.0\/movies\/771313085\/similar.json"
+},
+"release_dates" : {
+"theater" : "2014-09-26",
+"dvd" : "2014-12-30"
+}
+},
+{
+"id" : "771349837",
+"posters" : {
+"original" : "http:\/\/content9.flixster.com\/movie\/11\/18\/91\/11189195_tmb.jpg",
+"detailed" : "http:\/\/content9.flixster.com\/movie\/11\/18\/91\/11189195_tmb.jpg",
+"thumbnail" : "http:\/\/content9.flixster.com\/movie\/11\/18\/91\/11189195_tmb.jpg",
+"profile" : "http:\/\/content9.flixster.com\/movie\/11\/18\/91\/11189195_tmb.jpg"
+},
+"synopsis" : "When Thomas wakes up trapped in a massive maze with a group of other boys, he has no memory of the outside world other than strange dreams about a mysterious organization known as W.C.K.D. Only by piecing together fragments of his past with clues he discovers in the maze can Thomas hope to uncover his true purpose and a way to escape. Based upon the best-selling novel by James Dashner. (c) Fox",
+"abridged_cast" : [
+{
+"name" : "Dylan O'Brien",
+"id" : "771375271",
+"characters" : [
+"Thomas"
+]
+},
+{
+"name" : "Kaya Scodelario",
+"id" : "770803276",
+"characters" : [
+"Teresa"
+]
+},
+{
+"name" : "Thomas Brodie-Sangster",
+"id" : "771100380",
+"characters" : [
+"Newt"
+]
+},
+{
+"name" : "Will Poulter",
+"id" : "770791291",
+"characters" : [
+"Gally"
+]
+},
+{
+"name" : "Aml Ameen",
+"id" : "364640368",
+"characters" : [
+"Alby"
+]
+}
+],
+"critics_consensus" : "",
+"ratings" : {
+"audience_rating" : "Upright",
+"critics_rating" : "Fresh",
+"audience_score" : 69,
+"critics_score" : 63
+},
+"mpaa_rating" : "PG-13",
+"title" : "The Maze Runner",
+"runtime" : 114,
+"alternate_ids" : {
+"imdb" : "1790864"
+},
+"year" : 2014,
+"links" : {
+"alternate" : "http:\/\/www.rottentomatoes.com\/m\/the_maze_runner\/",
+"reviews" : "http:\/\/api.rottentomatoes.com\/api\/public\/v1.0\/movies\/771349837\/reviews.json",
+"self" : "http:\/\/api.rottentomatoes.com\/api\/public\/v1.0\/movies\/771349837.json",
+"cast" : "http:\/\/api.rottentomatoes.com\/api\/public\/v1.0\/movies\/771349837\/cast.json",
+"similar" : "http:\/\/api.rottentomatoes.com\/api\/public\/v1.0\/movies\/771349837\/similar.json"
+},
+"release_dates" : {
+"theater" : "2014-09-19",
+"dvd" : "2014-12-16"
+}
+},
+{
+"id" : "771373348",
+"posters" : {
+"original" : "http:\/\/content6.flixster.com\/movie\/11\/17\/84\/11178476_tmb.jpg",
+"detailed" : "http:\/\/content6.flixster.com\/movie\/11\/17\/84\/11178476_tmb.jpg",
+"thumbnail" : "http:\/\/content6.flixster.com\/movie\/11\/17\/84\/11178476_tmb.jpg",
+"profile" : "http:\/\/content6.flixster.com\/movie\/11\/17\/84\/11178476_tmb.jpg"
+},
+"synopsis" : "Filmed over 12 years with the same cast, Richard Linklater's BOYHOOD is a groundbreaking story of growing up as seen through the eyes of a child named Mason (a breakthrough performance by Ellar Coltrane), who literally grows up on screen before our eyes. Starring Ethan Hawke and Patricia Arquette as Mason's parents and newcomer Lorelei Linklater as his sister Samantha, BOYHOOD charts the rocky terrain of childhood like no other film has before. Snapshots of adolescence from road trips and family dinners to birthdays and graduations and all the moments in between become transcendent, set to a soundtrack spanning the years from Coldplay's Yellow to Arcade Fire's Deep Blue. BOYHOOD is both a nostalgic time capsule of the recent past and an ode to growing up and parenting. It's impossible to watch Mason and his family without thinking about our own journey. (c) Sundance Film Fest",
+"abridged_cast" : [
+{
+"name" : "Ellar Coltrane",
+"id" : "771478993",
+"characters" : [
+"Mason"
+]
+},
+{
+"name" : "Patricia Arquette",
+"id" : "162670129",
+"characters" : [
+"Mom"
+]
+},
+{
+"name" : "Ethan Hawke",
+"id" : "162660464",
+"characters" : [
+"Dad"
+]
+},
+{
+"name" : "Lorelei Linklater",
+"id" : "771017690",
+"characters" : [
+"Samantha"
+]
+},
+{
+"name" : "Elijah Smith",
+"id" : "771497481",
+"characters" : [
+"Tommy"
+]
+}
+],
+"critics_consensus" : "",
+"ratings" : {
+"audience_rating" : "Upright",
+"critics_rating" : "Certified Fresh",
+"audience_score" : 85,
+"critics_score" : 98
+},
+"mpaa_rating" : "R",
+"title" : "Boyhood",
+"runtime" : 165,
+"alternate_ids" : {
+"imdb" : "1065073"
+},
+"year" : 2014,
+"links" : {
+"alternate" : "http:\/\/www.rottentomatoes.com\/m\/boyhood\/",
+"reviews" : "http:\/\/api.rottentomatoes.com\/api\/public\/v1.0\/movies\/771373348\/reviews.json",
+"self" : "http:\/\/api.rottentomatoes.com\/api\/public\/v1.0\/movies\/771373348.json",
+"cast" : "http:\/\/api.rottentomatoes.com\/api\/public\/v1.0\/movies\/771373348\/cast.json",
+"similar" : "http:\/\/api.rottentomatoes.com\/api\/public\/v1.0\/movies\/771373348\/similar.json"
+},
+"release_dates" : {
+"theater" : "2014-07-11",
+"dvd" : "2015-01-06"
+}
+},
+{
+"id" : "771386515",
+"posters" : {
+"original" : "http:\/\/content8.flixster.com\/movie\/11\/18\/08\/11180842_tmb.jpg",
+"detailed" : "http:\/\/content8.flixster.com\/movie\/11\/18\/08\/11180842_tmb.jpg",
+"thumbnail" : "http:\/\/content8.flixster.com\/movie\/11\/18\/08\/11180842_tmb.jpg",
+"profile" : "http:\/\/content8.flixster.com\/movie\/11\/18\/08\/11180842_tmb.jpg"
+},
+"synopsis" : "An ex-hitman comes out of retirement to track down the gangsters that took everything from him. With New York City as his bullet-riddled playground, JOHN WICK (Keanu Reeves) is a fresh and stylized take on the \"assassin genre\". (C) Lionsgate",
+"abridged_cast" : [
+{
+"name" : "Keanu Reeves",
+"id" : "162654049",
+"characters" : [
+"John Wick"
+]
+},
+{
+"name" : "Adrianne Palicki",
+"id" : "770790552",
+"characters" : [
+"Ms. Perkins"
+]
+},
+{
+"name" : "Alfie Allen",
+"id" : "770795841",
+"characters" : [
+"Iosef Tarasov"
+]
+},
+{
+"name" : "Bridget Moynahan",
+"id" : "162653926",
+"characters" : [
+"Mrs. Wick"
+]
+},
+{
+"name" : "Dean Winters",
+"id" : "364629354",
+"characters" : [
+"Avi"
+]
+}
+],
+"critics_consensus" : "",
+"ratings" : {
+"audience_rating" : "Upright",
+"critics_rating" : "Certified Fresh",
+"audience_score" : 80,
+"critics_score" : 83
+},
+"mpaa_rating" : "R",
+"title" : "John Wick",
+"runtime" : 96,
+"alternate_ids" : {
+"imdb" : "2911666"
+},
+"year" : 2014,
+"links" : {
+"alternate" : "http:\/\/www.rottentomatoes.com\/m\/john_wick\/",
+"reviews" : "http:\/\/api.rottentomatoes.com\/api\/public\/v1.0\/movies\/771386515\/reviews.json",
+"self" : "http:\/\/api.rottentomatoes.com\/api\/public\/v1.0\/movies\/771386515.json",
+"cast" : "http:\/\/api.rottentomatoes.com\/api\/public\/v1.0\/movies\/771386515\/cast.json",
+"similar" : "http:\/\/api.rottentomatoes.com\/api\/public\/v1.0\/movies\/771386515\/similar.json"
+},
+"release_dates" : {
+"theater" : "2014-10-24",
+"dvd" : "2015-02-03"
+}
+}
+],
+"links" : {
+"self" : "http:\/\/api.rottentomatoes.com\/api\/public\/v1.0\/lists\/dvds\/top_rentals.json?limit=10&country=us",
+"alternate" : "http:\/\/www.rottentomatoes.com\/dvd\/top_rentals"
+},
+"link_template" : "http:\/\/api.rottentomatoes.com\/api\/public\/v1.0\/lists\/dvds\/top_rentals.json?limit={num-results}&country={country-code}"
+}

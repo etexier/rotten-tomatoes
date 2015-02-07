@@ -12,6 +12,7 @@
 #import "UIImageView+AFNetworking.h"
 #import <SVProgressHUD/SVProgressHUD.h>
 #import "Constants.h"
+#import "RTHeader.h"
 
 
 
@@ -21,12 +22,19 @@
 @property (nonatomic, strong) NSArray *movies;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 @property (nonatomic, strong) SVProgressHUD *hud;
+@property (nonatomic, strong) RTMoviesController *restController;
 
 @end
 
-static NSString *getMoviesString = kRottenTomatoesUrl;
-
 @implementation MovieViewController
+
+- (id)init {
+    if ( self = [super init] ) {
+        self.restController = [[RTMoviesController alloc]init];
+        return self;
+    }
+    return nil;
+}
 
 
 
@@ -46,7 +54,13 @@ static NSString *getMoviesString = kRottenTomatoesUrl;
     [self.tableView registerNib:[UINib nibWithNibName:@"MovieCellTableViewCell" bundle:nil] forCellReuseIdentifier:@"MovieCell"];
     self.tableView.rowHeight = 100;
     
-        NSString *url = getMoviesString;
+    [self loadData];
+    
+    
+    // this is the old code before using Rest2Mobile generation
+    /* 
+     
+    NSString *url = getMoviesString;
     
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:url]];
                              
@@ -54,6 +68,7 @@ static NSString *getMoviesString = kRottenTomatoesUrl;
                                        queue:[NSOperationQueue mainQueue]
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
                                NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+     
                                self.movies = json[@"movies"];
                                NSLog(@"response: %@", self.movies);
                                NSLog(@"count: %lu", self.movies.count);
@@ -61,7 +76,7 @@ static NSString *getMoviesString = kRottenTomatoesUrl;
                                // reload data
                                [self.tableView reloadData];
     }];
-    
+    */
     self.title = @"Movies";
 
 }
@@ -86,39 +101,70 @@ static NSString *getMoviesString = kRottenTomatoesUrl;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MovieCellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MovieCell" forIndexPath:indexPath];
     
-    
-    NSDictionary *movie = self.movies[indexPath.row];
-    NSString *url = [movie valueForKeyPath:@"posters.thumbnail"];
-    NSString *title = [movie valueForKey:@"title"];
-    NSString *synopsis = [movie valueForKey:@"synopsis"];
-    
-    
-    NSLog(@"synopsis: %@", synopsis);
-    NSLog(@"title: %@", title);
-    NSLog(@"URL: %@", url);
-    cell.titleLabel.text = title;
-    cell.synopsisLabel.text = synopsis;
-    [cell.thumbnail setImageWithURL:[NSURL URLWithString:url]];
+    RTMovie *movie = (RTMovie *) self.movies[indexPath.row];
+    cell.titleLabel.text = movie.title;
+    cell.synopsisLabel.text = movie.synopsis;
+    [cell.thumbnail setImageWithURL:[NSURL URLWithString:movie.posters.thumbnail]];
 
     return cell;
 }
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    MovieDetailsViewController * vc = [[MovieDetailsViewController alloc] init];
-    vc.movie = self.movies[indexPath.row];
-    [self.navigationController pushViewController:vc animated:YES];
+    MovieDetailsViewController * detailsVc = [[MovieDetailsViewController alloc] init];
+    detailsVc.movie = self.movies[indexPath.row];
+    [self.navigationController pushViewController:detailsVc animated:YES];
 }
 
 #pragma mark - private
 
-- (void)onRefresh {
-    NSURL *url = [NSURL URLWithString:getMoviesString];
-    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
-    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+-(void) loadData {
+    
+    @try {
+        NSLog(@"Invoking controller");
+        [self.restController getBoxOffice:@"10" country:@"us" apikey:kApiKey success:^(RTBoxOfficeResult *response) {
+           NSLog(@"Response = %@", response);
+            self.movies = response.movies;
+            [self.tableView reloadData];
+        } failure:^(NSError *error) {
+            [[[UIAlertView alloc] initWithTitle:@"Error"
+                                        message:@"An error occurred"
+                                       delegate:nil
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles:nil, nil] show];
+        }];
         
+    }
+    @catch (NSException * e) {
+        //NSLog(@"An Exception occurred: %@", e);
+        [[[UIAlertView alloc] initWithTitle:@"Error"
+                                    message:@"An error occurred"
+                                   delegate:nil
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles:nil, nil] show];
+    }
+    @finally {
+        NSLog(@"finally");
+    }
+    
+    
+}
+
+- (void)onRefresh {
+    [self.restController getBoxOffice:@"10" country:@"us" apikey:kApiKey success:^(RTBoxOfficeResult *response) {
+        NSLog(@"Response = %@", response);
+        self.movies = response.movies;
+        [self.refreshControl endRefreshing];
+        [self.tableView reloadData];
+    } failure:^(NSError *error) {
+        [[[UIAlertView alloc] initWithTitle:@"Error"
+                                    message:@"An error occurred"
+                                   delegate:nil
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles:nil, nil] show];
         [self.refreshControl endRefreshing];
     }];
+
 }
 
 

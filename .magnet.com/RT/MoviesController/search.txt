@@ -1,0 +1,89 @@
++Name search
++Request
+GET http://api.rottentomatoes.com/api/public/v1.0/movies.json?q=spider&page_limit=1&page=1&apikey=wrtc95qtd7c84rvmdv23tggg
+
+
+
+
++Response
+
++Body
+{
+  "links" : {
+    "next" : "http:\/\/api.rottentomatoes.com\/api\/public\/v1.0\/movies.json?q=spider&page_limit=1&page=2",
+    "self" : "http:\/\/api.rottentomatoes.com\/api\/public\/v1.0\/movies.json?q=spider&page_limit=1&page=1"
+  },
+  "movies" : [
+    {
+      "id" : "10122",
+      "posters" : {
+        "original" : "http:\/\/content7.flixster.com\/movie\/11\/16\/52\/11165293_tmb.jpg",
+        "detailed" : "http:\/\/content7.flixster.com\/movie\/11\/16\/52\/11165293_tmb.jpg",
+        "thumbnail" : "http:\/\/content7.flixster.com\/movie\/11\/16\/52\/11165293_tmb.jpg",
+        "profile" : "http:\/\/content7.flixster.com\/movie\/11\/16\/52\/11165293_tmb.jpg"
+      },
+      "synopsis" : "",
+      "abridged_cast" : [
+        {
+          "name" : "Tobey Maguire",
+          "id" : "162660340",
+          "characters" : [
+            "Spider-Man\/Peter Parker"
+          ]
+        },
+        {
+          "name" : "Kirsten Dunst",
+          "id" : "162654578",
+          "characters" : [
+            "Mary Jane Watson"
+          ]
+        },
+        {
+          "name" : "Willem Dafoe",
+          "id" : "162668400",
+          "characters" : [
+            "Green Goblin\/Norman Osborn"
+          ]
+        },
+        {
+          "name" : "James Franco",
+          "id" : "162653202",
+          "characters" : [
+            "Harry Osborn"
+          ]
+        },
+        {
+          "name" : "Cliff Robertson",
+          "id" : "162665303",
+          "characters" : [
+            "Uncle Ben"
+          ]
+        }
+      ],
+      "critics_consensus" : "",
+      "ratings" : {
+        "audience_rating" : "Upright",
+        "critics_rating" : "Certified Fresh",
+        "audience_score" : 67,
+        "critics_score" : 89
+      },
+      "mpaa_rating" : "PG-13",
+      "title" : "Spider-Man",
+      "runtime" : 121,
+      "links" : {
+        "alternate" : "http:\/\/www.rottentomatoes.com\/m\/spiderman\/",
+        "reviews" : "http:\/\/api.rottentomatoes.com\/api\/public\/v1.0\/movies\/10122\/reviews.json",
+        "self" : "http:\/\/api.rottentomatoes.com\/api\/public\/v1.0\/movies\/10122.json",
+        "cast" : "http:\/\/api.rottentomatoes.com\/api\/public\/v1.0\/movies\/10122\/cast.json",
+        "similar" : "http:\/\/api.rottentomatoes.com\/api\/public\/v1.0\/movies\/10122\/similar.json"
+      },
+      "year" : 2002,
+      "release_dates" : {
+        "theater" : "2002-05-03",
+        "dvd" : "2002-11-01"
+      }
+    }
+  ],
+  "total" : 123,
+  "link_template" : "http:\/\/api.rottentomatoes.com\/api\/public\/v1.0\/movies.json?q={search-term}&page_limit={results-per-page}&page={page-number}"
+}
