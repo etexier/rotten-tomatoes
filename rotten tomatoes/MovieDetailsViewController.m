@@ -34,6 +34,13 @@
     self.ratingLabel.text = self.movie.mpaa_rating;
     self.criticsRatingLabel.text = [NSString stringWithFormat:@"Critics: %u%%", self.movie.ratings.critics_score];
     self.audienceRatingLabel.text = [NSString stringWithFormat:@"Audience: %u%%", self.movie.ratings.audience_score];
+    if (self.movie.ratings.critics_score < 51) {
+        self.criticsRatingLabel.textColor = [UIColor redColor];
+    } 
+
+    if (self.movie.ratings.audience_score < 51) {
+        self.audienceRatingLabel.textColor = [UIColor redColor];
+    }
 
     // set synopsis: calculating label size based on synopsis
     self.synopsisLabel.text = self.movie.synopsis;
@@ -48,10 +55,10 @@
     [self.movieDetails flashScrollIndicators];
     self.movieDetails.contentSize = CGSizeMake(320.0f, requiredSize.height + 130.0 + 100.0);
     NSLog(@"Content size: height %f, width %f", self.movieDetails.contentSize.height, self.movieDetails.contentSize.width);
-//    [self.movieDetails setFrame:GCRectMake]
 
     self.synopsisLabel.frame = CGRectMake(20.0f, 100.0f, requiredSize.width, requiredSize.height);
     self.synopsisLabel.numberOfLines = (NSInteger) requiredSize.height;
+
 
 
     // load images

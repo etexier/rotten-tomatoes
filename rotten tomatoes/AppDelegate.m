@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "MovieViewController.h"
 #import "MovieDvdsTabBarController.h"
+#import "Helper.h"
 
 @interface AppDelegate ()
 @end
@@ -24,9 +25,11 @@
     MovieViewController *vc2 = [[MovieViewController alloc] initAsTopRentals];
     UINavigationController *nvc1 = [[UINavigationController alloc] initWithRootViewController:vc1];
     UINavigationController *nvc2 = [[UINavigationController alloc] initWithRootViewController:vc2];
-
+    [Helper setNavigationStyle:nvc1];
+    [Helper setNavigationStyle:nvc2];
     NSArray* controllers = [NSArray arrayWithObjects:nvc1, nvc2, nil];
     tbc.viewControllers = controllers;
+    [Helper setTabStyle:tbc];
 
     self.window.rootViewController = tbc;
     [self.window makeKeyAndVisible];

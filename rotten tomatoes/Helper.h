@@ -12,6 +12,9 @@
 @interface Helper : NSObject
 
 + (void) fadeInImage:(UIImageView *)imageView url:(NSURL *) url;
++ (void) setNavigationStyle:(UINavigationController *)controller;
++ (void) setTabStyle:(UITabBarController *)controller;
+
 
 
 @end

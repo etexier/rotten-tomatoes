@@ -60,7 +60,7 @@
     // Do any additional setup after loading the view from its nib.
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-    
+    self.tableView.backgroundColor = [UIColor blackColor];
     // refresh control
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(onRefresh) forControlEvents:UIControlEventValueChanged];
@@ -69,6 +69,7 @@
     // register movie cell
     [self.tableView registerNib:[UINib nibWithNibName:@"MovieCellTableViewCell" bundle:nil] forCellReuseIdentifier:@"MovieCell"];
     self.tableView.rowHeight = 100;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     NSLog(@"Loading....");
     [self loadData];
 }
@@ -90,8 +91,13 @@
     MovieCellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MovieCell" forIndexPath:indexPath];
     
     RTMovie *movie = (RTMovie *) self.movies[indexPath.row];
+    cell.backgroundColor = [UIColor blackColor];
     cell.titleLabel.text = movie.title;
+    cell.titleLabel.backgroundColor = [UIColor blackColor];
+    cell.titleLabel.textColor = [UIColor orangeColor];
     cell.synopsisLabel.text = movie.synopsis;
+    cell.synopsisLabel.backgroundColor = [UIColor blackColor];
+    cell.synopsisLabel.textColor = [UIColor whiteColor];
     [Helper fadeInImage:cell.thumbnail url:[NSURL URLWithString:movie.posters.thumbnail]];
 
     return cell;

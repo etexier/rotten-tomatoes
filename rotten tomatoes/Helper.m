@@ -20,4 +20,21 @@
 }
 
 
++ (void) setNavigationStyle:(UINavigationController *)controller {
+    controller.navigationBar.barTintColor = [UIColor blackColor];
+    controller.navigationBar.tintColor = [UIColor colorWithRed:0.7 green:0.0 blue:0.7 alpha:1] ;
+    [controller.navigationBar
+     setTitleTextAttributes:@{NSForegroundColorAttributeName :controller.navigationBar.tintColor}];
+    controller.navigationBar.translucent = YES;
+
+}
++ (void) setTabStyle:(UITabBarController *)controller {
+    controller.tabBar.barTintColor = [UIColor blackColor];
+    controller.tabBar.tintColor = [UIColor colorWithRed:0.7 green:0.0 blue:0.7 alpha:1];
+//    [controller.tabBar
+//     setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor lightGrayColor]}];
+    controller.tabBar.translucent = YES;
+    
+}
+
 @end
