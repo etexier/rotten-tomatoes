@@ -30,7 +30,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.synopsisLabel.text = self.movie.synopsis;
-    self.titleLabel.text = self.movie.title;
+    self.titleLabel.text = [NSString stringWithFormat:@"%@ (%u)", self.movie.title, self.movie.year];
     self.ratingLabel.text = self.movie.mpaa_rating;
     self.criticsRatingLabel.text = [NSString stringWithFormat:@"Critics: %u%%", self.movie.ratings.critics_score];
     self.audienceRatingLabel.text = [NSString stringWithFormat:@"Audience: %u%%", self.movie.ratings.audience_score];
