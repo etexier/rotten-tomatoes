@@ -31,3 +31,5 @@ Credits
 ---------
 * [Rotten Tomatoes API](http://developer.rottentomatoes.com/docs/read/JSON)
 * [AFNetworking](https://github.com/AFNetworking/AFNetworking)
+* [Rest2Mobile](https://github.com/magnetsystems/rest2mobile)
+* Icons made by [Daniel Bruce](http://www.danielbruce.se), (Freepik)[http://www.freepik.com] from [Flaticon](http://www.flaticon.com is licensed by [Creative Commons BY 3.0](http://creativecommons.org/licenses/by/3.0/)
