@@ -11,5 +11,4 @@
 
 @interface MovieDetailsViewController : UIViewController
 @property (nonatomic, strong) RTMovie *movie;
-
 @end

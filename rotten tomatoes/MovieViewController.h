@@ -10,4 +10,8 @@
 
 @interface MovieViewController : UIViewController
 
+- (id)initAsBoxOffice;
+- (id)initAsTopRentals;
+
+
 @end

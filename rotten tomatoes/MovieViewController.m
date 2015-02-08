@@ -17,19 +17,37 @@
 
 
 // implement UITableViewDataSource: self will provide the data and be its own delegate
-@interface MovieViewController () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate>
+@interface MovieViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *movies;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 @property (nonatomic, strong) RTMoviesController *restController;
+@property (nonatomic, assign) BOOL isBoxOffice;
 
 @end
 
 @implementation MovieViewController
 
-- (id)init {
+
+- (id)initAsBoxOffice {
     if ( self = [super init] ) {
         self.restController = [[RTMoviesController alloc]init];
+        self.isBoxOffice = YES;
+        //    UIImage* anImage = [UIImage imageNamed:@"MyViewControllerImage.png"];
+        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Box Office" image:[UIImage imageNamed:@"concert1.png"] tag:0];
+        self.title = @"Box Office";
+        return self;
+    }
+    return nil;
+}
+- (id)initAsTopRentals {
+    if ( self = [super init] ) {
+        self.restController = [[RTMoviesController alloc]init];
+        self.isBoxOffice = NO;
+        //    UIImage* anImage = [UIImage imageNamed:@"MyViewControllerImage.png"];
+        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Top Rentals" image:[UIImage imageNamed:@"cd13.png"] tag:1];
+        self.title = @"Top Rentals";
+        
         return self;
     }
     return nil;
@@ -53,7 +71,6 @@
     self.tableView.rowHeight = 100;
     NSLog(@"Loading....");
     [self loadData];
-    self.title = @"Movies";
 }
 
 - (void)didReceiveMemoryWarning {
@@ -92,15 +109,28 @@
 -(void) loadData {
     
     [SVProgressHUD showWithStatus:@"Loading..." maskType:SVProgressHUDMaskTypeBlack];
-    [self.restController getBoxOffice:@"10" country:@"us" apikey:kApiKey success:^(RTBoxOfficeResult *response) {
-       NSLog(@"Response = %@", response);
-        self.movies = response.movies;
-        [SVProgressHUD dismiss];
-        [self.tableView reloadData];
+    if (self.isBoxOffice) {
         
-    } failure:^(NSError *error) {
-        [SVProgressHUD showErrorWithStatus:@"Couldn't get Movies. Check your connection"];
-    }];
+        [self.restController getBoxOffice:@"10" country:@"us" apikey:kApiKey success:^(RTBoxOfficeResult *response) {
+            NSLog(@"Response = %@", response);
+            self.movies = response.movies;
+            [SVProgressHUD dismiss];
+            [self.tableView reloadData];
+            
+        } failure:^(NSError *error) {
+            [SVProgressHUD showErrorWithStatus:@"Couldn't get Movies. Check your connection"];
+        }];
+    } else {
+        
+        [self.restController getTopRentals:@"10" country:@"us" apikey:kApiKey success:^(RTTopRentalsResult *response) {
+            self.movies = response.movies;
+            [SVProgressHUD dismiss];
+            [self.tableView reloadData];
+        } failure:^(NSError *error) {
+            [SVProgressHUD showErrorWithStatus:@"Couldn't get Movies. Check your connection"];
+        }];
+        
+    }
 }
 
 - (void)onRefresh {

@@ -22,6 +22,7 @@
 		312E40BC1A81FE7A0007EADC /* MovieDetailsViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 312E40BA1A81FE7A0007EADC /* MovieDetailsViewCell.xib */; };
 		3137765E1A8304630040AC01 /* MovieCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3137765C1A8304630040AC01 /* MovieCellTableViewCell.m */; };
 		3137765F1A8304630040AC01 /* MovieCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3137765D1A8304630040AC01 /* MovieCellTableViewCell.xib */; };
+		3170F7941A87491400668855 /* MovieDvdsTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3170F7931A87491400668855 /* MovieDvdsTabBarController.m */; };
 		318B8D4D1A86CF03002902B8 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 318B8D4C1A86CF03002902B8 /* Helper.m */; };
 		42A447259222E8EC21E3E7BF /* RTAbridged_cast.m in Sources */ = {isa = PBXBuildFile; fileRef = 352CFA09947B527C293885F4 /* RTAbridged_cast.m */; };
 		50F51040A159AA6E7BF3A929 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CC83D2E208E50EAA083BCE8 /* libPods.a */; };
@@ -71,6 +72,8 @@
 		3137765B1A8304630040AC01 /* MovieCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieCellTableViewCell.h; sourceTree = "<group>"; };
 		3137765C1A8304630040AC01 /* MovieCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieCellTableViewCell.m; sourceTree = "<group>"; };
 		3137765D1A8304630040AC01 /* MovieCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieCellTableViewCell.xib; sourceTree = "<group>"; };
+		3170F7921A87491400668855 /* MovieDvdsTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieDvdsTabBarController.h; sourceTree = "<group>"; };
+		3170F7931A87491400668855 /* MovieDvdsTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieDvdsTabBarController.m; sourceTree = "<group>"; };
 		318B8D4B1A86CF03002902B8 /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
 		318B8D4C1A86CF03002902B8 /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helper.m; sourceTree = "<group>"; };
 		31B56E121A86A529006A1A57 /* RTHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTHeader.h; sourceTree = "<group>"; };
@@ -215,6 +218,8 @@
 				311AAA021A85839800DC8453 /* MovieDetailsViewController.h */,
 				311AAA031A85839800DC8453 /* MovieDetailsViewController.m */,
 				311AAA041A85839800DC8453 /* MovieDetailsViewController.xib */,
+				3170F7921A87491400668855 /* MovieDvdsTabBarController.h */,
+				3170F7931A87491400668855 /* MovieDvdsTabBarController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -480,6 +485,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				310A87201A867B740065AAB5 /* MovieViewController.m in Sources */,
+				3170F7941A87491400668855 /* MovieDvdsTabBarController.m in Sources */,
 				310A871D1A86790C0065AAB5 /* main.m in Sources */,
 				311AAA051A85839800DC8453 /* MovieDetailsViewController.m in Sources */,
 				312E408B1A81F61E0007EADC /* AppDelegate.m in Sources */,

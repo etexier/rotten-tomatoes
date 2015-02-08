@@ -9,6 +9,7 @@
 #import "MovieDetailsViewController.h"
 #import "UIImageView+AFNetworking.h"
 #import "Helper.h"
+#include <CoreGraphics/CGGeometry.h>
 
 @interface MovieDetailsViewController ()
 
@@ -29,15 +30,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.synopsisLabel.text = self.movie.synopsis;
     self.titleLabel.text = [NSString stringWithFormat:@"%@ (%u)", self.movie.title, self.movie.year];
     self.ratingLabel.text = self.movie.mpaa_rating;
     self.criticsRatingLabel.text = [NSString stringWithFormat:@"Critics: %u%%", self.movie.ratings.critics_score];
     self.audienceRatingLabel.text = [NSString stringWithFormat:@"Audience: %u%%", self.movie.ratings.audience_score];
-    
-    NSString *url = self.movie.posters.thumbnail;
 
-    self.moviePoster.alpha = 1;
+    // set synopsis: calculating label size based on synopsis
+    self.synopsisLabel.text = self.movie.synopsis;
+    NSAttributedString *attributedText= self.synopsisLabel.attributedText;
+    CGRect rect = [attributedText boundingRectWithSize:(CGSize){280, MAXFLOAT}
+                                                options:NSStringDrawingUsesLineFragmentOrigin
+                                                context:nil];
+    CGSize requiredSize = rect.size;
+    self.synopsisLabel.frame = CGRectMake(20.0f, 100.0f, requiredSize.width, requiredSize.height);
+    self.synopsisLabel.numberOfLines = (NSInteger) requiredSize.height;
+    
+
+    // load images
+    NSString *url = self.movie.posters.thumbnail;
+self.moviePoster.alpha = 1;
     [self.moviePoster setImageWithURL:[NSURL URLWithString:url]];
     
     url = [url stringByReplacingOccurrencesOfString:@"_tmb.jpg" withString:@"_det.jpg"];

@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "MovieViewController.h"
+#import "MovieDvdsTabBarController.h"
 
 @interface AppDelegate ()
 @end
@@ -16,17 +17,18 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // because we removed the entry point, we need to manually create a window
-    // note: window are rarely used
     self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
 
-    MovieViewController *vc = [[MovieViewController alloc] init];
-    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:vc];
-//    nvc.view.backgroundColor = [UIColor blackColor];
-//    vc.view.backgroundColor  = [UIColor blackColor];
-//    self.window.backgroundColor = [UIColor blackColor];
+    MovieDvdsTabBarController *tbc = [[MovieDvdsTabBarController alloc] init];
+    MovieViewController *vc1 = [[MovieViewController alloc] initAsBoxOffice];
+    MovieViewController *vc2 = [[MovieViewController alloc] initAsTopRentals];
+    UINavigationController *nvc1 = [[UINavigationController alloc] initWithRootViewController:vc1];
+    UINavigationController *nvc2 = [[UINavigationController alloc] initWithRootViewController:vc2];
 
-    self.window.rootViewController = nvc;
+    NSArray* controllers = [NSArray arrayWithObjects:nvc1, nvc2, nil];
+    tbc.viewControllers = controllers;
+
+    self.window.rootViewController = tbc;
     [self.window makeKeyAndVisible];
     
     return YES;
