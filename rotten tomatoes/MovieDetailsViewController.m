@@ -46,6 +46,23 @@
     self.title = self.movie.title;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(shareAction:)];
+    self.navigationItem.rightBarButtonItem = shareButton;
+}
+
+-(void)shareAction:(id)sender {
+    NSArray *items =[NSArray arrayWithObjects:self.movie.title,
+                     [NSNumber  numberWithInt:self.movie.year],
+                     self.movie.mpaa_rating,
+                     [NSString stringWithFormat:@"Score: %u%%" , self.movie.ratings.audience_score],
+                      self.movie.synopsis,
+                      nil];
+    
+    UIActivityViewController *shareVc = [[UIActivityViewController alloc] initWithActivityItems:items applicationActivities:nil];
+    [self presentViewController:shareVc animated:YES completion:nil];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
