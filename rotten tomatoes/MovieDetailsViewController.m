@@ -16,8 +16,12 @@
 @property (weak, nonatomic) IBOutlet UIImageView *moviePosterDetailed;
 
 @property (weak, nonatomic) IBOutlet UIScrollView *movieDetails;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *synopsisLabel;
+@property (weak, nonatomic) IBOutlet UILabel *ratingLabel;
+@property (weak, nonatomic) IBOutlet UILabel *criticsRatingLabel;
+@property (weak, nonatomic) IBOutlet UILabel *audienceRatingLabel;
 
 @end
 
@@ -26,6 +30,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.synopsisLabel.text = self.movie.synopsis;
+    self.titleLabel.text = self.movie.title;
+    self.ratingLabel.text = self.movie.mpaa_rating;
+    self.criticsRatingLabel.text = [NSString stringWithFormat:@"Critics: %u%%", self.movie.ratings.critics_score];
+    self.audienceRatingLabel.text = [NSString stringWithFormat:@"Audience: %u%%", self.movie.ratings.audience_score];
+    
     NSString *url = self.movie.posters.thumbnail;
 
     self.moviePoster.alpha = 1;
