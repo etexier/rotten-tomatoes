@@ -42,9 +42,17 @@
                                                 options:NSStringDrawingUsesLineFragmentOrigin
                                                 context:nil];
     CGSize requiredSize = rect.size;
+
+    [self.movieDetails setUserInteractionEnabled:YES];
+    [self.movieDetails setScrollEnabled:YES];
+    [self.movieDetails flashScrollIndicators];
+    self.movieDetails.contentSize = CGSizeMake(320.0f, requiredSize.height + 130.0 + 100.0);
+    NSLog(@"Content size: height %f, width %f", self.movieDetails.contentSize.height, self.movieDetails.contentSize.width);
+//    [self.movieDetails setFrame:GCRectMake]
+
     self.synopsisLabel.frame = CGRectMake(20.0f, 100.0f, requiredSize.width, requiredSize.height);
     self.synopsisLabel.numberOfLines = (NSInteger) requiredSize.height;
-    
+
 
     // load images
     NSString *url = self.movie.posters.thumbnail;
