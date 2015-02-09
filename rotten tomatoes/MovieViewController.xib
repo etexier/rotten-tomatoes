@@ -6,6 +6,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MovieViewController">
             <connections>
+                <outlet property="searchBar" destination="Bkj-YS-6xU" id="err-Gb-s4A"/>
+                <outlet property="searchDisplayController" destination="aok-Cb-5y9" id="DJp-9h-I1L"/>
                 <outlet property="tableView" destination="tfL-ZD-gIq" id="9yI-dk-Qys"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -20,9 +22,27 @@
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
+                <searchBar contentMode="redraw" barStyle="black" id="Bkj-YS-6xU">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="bL4-3Q-tj0"/>
+                    </connections>
+                </searchBar>
             </subviews>
-            <point key="canvasLocation" x="323" y="183"/>
+            <point key="canvasLocation" x="325" y="188"/>
         </view>
+        <searchDisplayController id="aok-Cb-5y9" customClass="MovieSearchDisplayController">
+            <connections>
+                <outlet property="delegate" destination="-1" id="eK3-9E-cPP"/>
+                <outlet property="searchBar" destination="Bkj-YS-6xU" id="Ee2-5N-FvX"/>
+                <outlet property="searchContentsController" destination="-1" id="OxD-WG-55i"/>
+                <outlet property="searchResultsDataSource" destination="-1" id="co0-xA-dCa"/>
+                <outlet property="searchResultsDelegate" destination="-1" id="UBy-wH-KY4"/>
+            </connections>
+        </searchDisplayController>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

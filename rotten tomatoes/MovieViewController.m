@@ -17,8 +17,10 @@
 
 
 // implement UITableViewDataSource: self will provide the data and be its own delegate
-@interface MovieViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface MovieViewController () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (strong,nonatomic) NSMutableArray *filteredMovies;
 @property (nonatomic, strong) NSArray *movies;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 @property (nonatomic, strong) RTMoviesController *restController;
@@ -54,6 +56,17 @@
 }
 
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    UIBarButtonItem *searchButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(searchAction:)];
+    self.navigationItem.leftBarButtonItem = searchButton;
+}
+
+-(void)searchAction:(id)sender {
+    [[self navigationController] setNavigationBarHidden:YES animated:YES];
+    
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -61,15 +74,28 @@
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     self.tableView.backgroundColor = [UIColor blackColor];
+    
+    // search bar
+//    self.searchBar.backgroundImage = [UIImage new]; // transparent
+    self.searchBar.tintColor = [UIColor orangeColor]; // set cursor color
+    [[UITextField appearanceWhenContainedIn:[UISearchBar class], nil] setTextColor:[UIColor orangeColor]]; // set text color
+    self.filteredMovies = [NSMutableArray arrayWithCapacity:[self.movies count]];
     // refresh control
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(onRefresh) forControlEvents:UIControlEventValueChanged];
     [self.tableView insertSubview:self.refreshControl atIndex:0];
     
-    // register movie cell
+    // register movie cell and table view layout
     [self.tableView registerNib:[UINib nibWithNibName:@"MovieCellTableViewCell" bundle:nil] forCellReuseIdentifier:@"MovieCell"];
     self.tableView.rowHeight = 100;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+    // register movie cell for search result table view and layout
+    [self.searchDisplayController.searchResultsTableView registerNib:[UINib nibWithNibName:@"MovieCellTableViewCell" bundle:nil] forCellReuseIdentifier:@"MovieCell"];
+    self.searchDisplayController.searchResultsTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.searchDisplayController.searchResultsTableView.backgroundColor = [UIColor blackColor];
+
+    self.searchDisplayController.searchResultsTableView.rowHeight = 100;
     NSLog(@"Loading....");
     [self loadData];
 }
@@ -83,55 +109,84 @@
 #pragma mark - TableView Methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.movies.count;
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        return self.filteredMovies.count;
+    } else {
+        return self.movies.count;
+    }
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    MovieCellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MovieCell" forIndexPath:indexPath];
     
-    RTMovie *movie = (RTMovie *) self.movies[indexPath.row];
+    
+    RTMovie *movie;
+    MovieCellTableViewCell * cell = (MovieCellTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"MovieCell" ];
+    
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        movie = (RTMovie *) self.filteredMovies[indexPath.row];
+    } else {
+        movie = (RTMovie *) self.movies[indexPath.row];
+    }
+
+    
     cell.backgroundColor = [UIColor blackColor];
-    cell.tintColor = [UIColor purpleColor];
+
     cell.titleLabel.text = movie.title;
     cell.titleLabel.backgroundColor = [UIColor blackColor];
     cell.titleLabel.textColor = [UIColor orangeColor];
     cell.synopsisLabel.text = movie.synopsis;
     cell.synopsisLabel.backgroundColor = [UIColor blackColor];
     cell.synopsisLabel.textColor = [UIColor whiteColor];
-    [cell.thumbnail setImage:[UIImage imageNamed:@"film14.png"]];
     [Helper fadeInImage:cell.thumbnail url:[NSURL URLWithString:movie.posters.thumbnail]];
 
     return cell;
 }
 
-- (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    MovieDetailsViewController * detailsVc = [[MovieDetailsViewController alloc] init];
+    
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        detailsVc.movie = self.filteredMovies[indexPath.row];
+    } else {
+        detailsVc.movie = self.movies[indexPath.row];
+    }
+    
+    [[self navigationController] setNavigationBarHidden:NO animated:YES];
+    [self.navigationController pushViewController:detailsVc animated:YES];
+    
+}
+
+#pragma mark - Content Filtering
+-(void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope {
+    // Update the filtered array based on the search text and scope.
+    // Remove all objects from the filtered search array
+    [self.filteredMovies removeAllObjects];
+    // Filter the array using NSPredicate
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.title contains[c] %@",searchText];
+    self.filteredMovies = [NSMutableArray arrayWithArray:[self.movies filteredArrayUsingPredicate:predicate]];
+}
+
+#pragma mark - UISearchDisplayController Delegate Methods
+-(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString {
+    // Tells the table data source to reload when text changes
+    [self filterContentForSearchText:searchString scope:
+     [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:[self.searchDisplayController.searchBar selectedScopeButtonIndex]]];
+    //  YES => result table view  reloaded.
     return YES;
 }
 
-- (void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    [self setCellColor:[Helper darkPurpleColor] ForCell:cell];  //highlight color
-}
-- (void) tableView:(UITableView *)tableView didUnhighlightRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    [self setCellColor:[UIColor blackColor] ForCell:cell];  // normal color
+-(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchScope:(NSInteger)searchOption {
+    // Tells the table data source to reload when scope bar selection changes
+    [self filterContentForSearchText:self.searchDisplayController.searchBar.text scope:
+     [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:searchOption]];
+    // YES =>search result table view  reloaded.
+    return YES;
 }
 
-- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-    MovieDetailsViewController * detailsVc = [[MovieDetailsViewController alloc] init];
-    detailsVc.movie = self.movies[indexPath.row];
-    [self.navigationController pushViewController:detailsVc animated:YES];
-}
 
 #pragma mark - private
-
-- (void)setCellColor:(UIColor *)color ForCell:(UITableViewCell *)cell {
-    cell.contentView.backgroundColor = color;
-    cell.backgroundColor = color;
-}
 
 -(void) loadData {
     
