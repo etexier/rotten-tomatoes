@@ -22,10 +22,12 @@ Time spent: `12hrs`
 - [X] Customize the highlight and selection effect of the cell.
 - [X] Customize the navigation bar.
 - [X] Add a tab bar for Box Office and DVD.
-- [ ] Add a search bar: pretty simple implementation of searching against the existing table view data.
+- [X] Add a search bar: pretty simple implementation of searching against the existing table view data.
 
 ### Walkthrough
-![Video Walkthrough](http://i.imgur.com/9d4fXIm.gif)
+![Demo](rottentomatoes-demo.gif)
+
+GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 Credits
 ---------
@@ -33,3 +35,8 @@ Credits
 * [AFNetworking](https://github.com/AFNetworking/AFNetworking)
 * [Rest2Mobile](https://github.com/magnetsystems/rest2mobile)
 * Icons made by [Daniel Bruce](http://www.danielbruce.se), (Freepik)[http://www.freepik.com] from [Flaticon](http://www.flaticon.com is licensed by [Creative Commons BY 3.0](http://creativecommons.org/licenses/by/3.0/)
+
+### License
+
+Licensed under the **[Apache License, Version 2.0] [license]** (the "License");
+you may not use this software except in compliance with the License.
