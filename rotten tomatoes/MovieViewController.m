@@ -92,25 +92,46 @@
     
     RTMovie *movie = (RTMovie *) self.movies[indexPath.row];
     cell.backgroundColor = [UIColor blackColor];
+    cell.tintColor = [UIColor purpleColor];
     cell.titleLabel.text = movie.title;
     cell.titleLabel.backgroundColor = [UIColor blackColor];
     cell.titleLabel.textColor = [UIColor orangeColor];
     cell.synopsisLabel.text = movie.synopsis;
     cell.synopsisLabel.backgroundColor = [UIColor blackColor];
     cell.synopsisLabel.textColor = [UIColor whiteColor];
+    [cell.thumbnail setImage:[UIImage imageNamed:@"film14.png"]];
     [Helper fadeInImage:cell.thumbnail url:[NSURL URLWithString:movie.posters.thumbnail]];
 
     return cell;
 }
 
+- (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    [self setCellColor:[Helper darkPurpleColor] ForCell:cell];  //highlight color
+}
+- (void) tableView:(UITableView *)tableView didUnhighlightRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    [self setCellColor:[UIColor blackColor] ForCell:cell];  // normal color
+}
+
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
     MovieDetailsViewController * detailsVc = [[MovieDetailsViewController alloc] init];
     detailsVc.movie = self.movies[indexPath.row];
     [self.navigationController pushViewController:detailsVc animated:YES];
 }
 
 #pragma mark - private
+
+- (void)setCellColor:(UIColor *)color ForCell:(UITableViewCell *)cell {
+    cell.contentView.backgroundColor = color;
+    cell.backgroundColor = color;
+}
 
 -(void) loadData {
     

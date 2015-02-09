@@ -7,6 +7,7 @@
 //
 
 #import "MovieCellTableViewCell.h"
+#import "Helper.h"
 
 @implementation MovieCellTableViewCell
 
@@ -18,8 +19,10 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+    
+    UIView * selectedBackgroundView = [[UIView alloc] init];
+    [selectedBackgroundView setBackgroundColor:[Helper darkPurpleColor]]; // set color here
+    [self setSelectedBackgroundView:selectedBackgroundView];
 }
 
 @end

@@ -9,12 +9,13 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface Helper : NSObject
 
+@interface Helper : NSObject
++ (UIColor *) darkPurpleColor;
++ (UIColor *) brightPurpleColor;
 + (void) fadeInImage:(UIImageView *)imageView url:(NSURL *) url;
 + (void) setNavigationStyle:(UINavigationController *)controller;
 + (void) setTabStyle:(UITabBarController *)controller;
-
 
 
 @end
