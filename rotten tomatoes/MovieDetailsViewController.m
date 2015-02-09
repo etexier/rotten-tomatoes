@@ -31,7 +31,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.titleLabel.text = [NSString stringWithFormat:@"%@ (%u)", self.movie.title, self.movie.year];
-    self.titleLabel.textColor = [Helper brightPurpleColor];
     self.ratingLabel.text = self.movie.mpaa_rating;
     self.criticsRatingLabel.text = [NSString stringWithFormat:@"Critics: %u%%", self.movie.ratings.critics_score];
     self.audienceRatingLabel.text = [NSString stringWithFormat:@"Audience: %u%%", self.movie.ratings.audience_score];
@@ -54,6 +53,8 @@
     [self.movieDetails setUserInteractionEnabled:YES];
     [self.movieDetails setScrollEnabled:YES];
     [self.movieDetails flashScrollIndicators];
+    self.movieDetails.backgroundColor = [UIColor blackColor];
+    [self.movieDetails setAlpha:0.7];
     self.movieDetails.contentSize = CGSizeMake(320.0f, requiredSize.height + 130.0 + 100.0);
     NSLog(@"Content size: height %f, width %f", self.movieDetails.contentSize.height, self.movieDetails.contentSize.width);
 

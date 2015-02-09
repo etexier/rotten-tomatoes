@@ -52,21 +52,21 @@
                             <rect key="frame" x="41" y="58" width="98" height="25"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
-                            <color key="textColor" red="0.0" green="0.40123895199999998" blue="0.0057570546469999997" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.0" green="1" blue="0.014348194809999999" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Audience" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Z1V-QN-h8g">
                             <rect key="frame" x="169" y="58" width="113" height="25"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
-                            <color key="textColor" red="0.0" green="0.40123895202020199" blue="0.0057570546472708612" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.0" green="1" blue="0.014348194809999999" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Synopsis" lineBreakMode="characterWrap" numberOfLines="100" baselineAdjustment="none" adjustsFontSizeToFit="NO" id="0g0-XX-1zB">
                             <rect key="frame" x="19" y="85" width="282" height="49"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                             <color key="highlightedColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         </label>
                     </subviews>

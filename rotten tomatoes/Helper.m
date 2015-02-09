@@ -33,19 +33,21 @@
 
 
 + (void) setNavigationStyle:(UINavigationController *)controller {
-    controller.navigationBar.barTintColor = [UIColor blackColor];
     controller.navigationBar.tintColor = [Helper brightPurpleColor];
     [controller.navigationBar
      setTitleTextAttributes:@{NSForegroundColorAttributeName :controller.navigationBar.tintColor}];
+    controller.navigationBar.backgroundColor = [UIColor clearColor];
+    controller.navigationBar.barStyle = UIBarStyleBlack;
     controller.navigationBar.translucent = YES;
+    controller.navigationBar.alpha = 0.3f;
+//    [controller.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+//    [controller.navigationBar setShadowImage:[UIImage new]];
+//    [controller setNavigationBarHidden:NO animated:YES];
 
 }
 + (void) setTabStyle:(UITabBarController *)controller {
     controller.tabBar.barTintColor = [UIColor blackColor];
     controller.tabBar.tintColor = [Helper brightPurpleColor];
-//    [controller.tabBar
-//     setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor lightGrayColor]}];
-    controller.tabBar.translucent = YES;
     
 }
 
